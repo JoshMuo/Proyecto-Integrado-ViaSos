@@ -1,0 +1,36 @@
+/* ESTILOS GENERALES: tipografía sencilla, colores neutros y fondo claro. */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #222; background: #f5f5f5; line-height: 1.5; }
+a { color: #a51f2b; }
+
+/* CABECERA Y MENÚ: barra roja simple con enlaces blancos. */
+.site-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 5%; background: #b32632; color: white; }
+.brand { color: white; font-size: 22px; font-weight: bold; text-decoration: none; }
+.site-header nav { display: flex; flex-wrap: wrap; gap: 16px; }
+.site-header nav a { color: white; text-decoration: none; }
+.site-header nav a:hover { text-decoration: underline; }
+
+/* CONTENIDO Y TARJETAS: centra el contenido y separa los módulos. */
+.container { width: min(100% - 32px, 1000px); margin: 28px auto; min-height: 70vh; }
+.card { background: white; border: 1px solid #ddd; border-radius: 5px; padding: 18px; margin: 18px 0; }
+
+/* FORMULARIOS: controles apilados, etiquetas claras y botones uniformes. */
+form { margin: 12px 0; }
+label { display: block; margin: 10px 0; font-weight: 600; }
+input, textarea, select { display: block; width: 100%; max-width: 560px; padding: 9px; margin-top: 4px; border: 1px solid #aaa; border-radius: 3px; font: inherit; }
+textarea { min-height: 80px; }
+label.check { display: flex; align-items: center; gap: 8px; font-weight: normal; }
+label.check input { width: auto; margin: 0; }
+button, .button { display: inline-block; padding: 9px 14px; border: 0; border-radius: 3px; background: #b32632; color: white; cursor: pointer; text-decoration: none; font: inherit; }
+button:hover, .button:hover { background: #861b25; }
+button.danger { background: #555; }
+
+/* FILAS Y MENSAJES: separa elementos repetidos y muestra avisos del sistema. */
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; }
+.row form { margin: 0; }
+.messages { padding: 8px 14px; margin-bottom: 16px; background: #fff4d6; border: 1px solid #e7d28c; }
+.qr-image { display: block; width: 260px; max-width: 100%; height: auto; }
+footer { padding: 18px; text-align: center; color: #666; border-top: 1px solid #ddd; background: white; }
+
+/* ADAPTACIÓN MÓVIL: apila el menú cuando la pantalla es estrecha. */
+@media (max-width: 620px) { .site-header { align-items: flex-start; flex-direction: column; } .site-header nav { flex-direction: column; gap: 8px; } }
