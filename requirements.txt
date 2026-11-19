@@ -1,0 +1,2 @@
+Django==5.2.8
+qrcode[pil]==8.2
