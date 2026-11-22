@@ -67,6 +67,10 @@ a {
 .container { width: min(100% - 32px, 1000px); margin: 28px auto; min-height: 70vh; }
 .card { background: white; border: 1px solid #ddd; border-radius: 5px; padding: 18px; margin: 18px 0; }
 .landing-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
   padding: clamp(24px, 5vw, 48px);
   background: white;
   border-radius: 16px;
@@ -86,7 +90,17 @@ a {
   gap: 16px;
   margin-top: 20px;
 }
-
+.hero-art img {
+  display: block;
+  width: min(100%, 340px);
+  height: auto;
+  margin: 0 auto;
+}
+@media (max-width: 760px) {
+  .landing-hero {
+    grid-template-columns: 1fr;
+  }
+}
 /* FORMULARIOS: controles apilados, etiquetas claras y botones uniformes. */
 form { margin: 12px 0; }
 label { display: block; margin: 10px 0; font-weight: 600; }
