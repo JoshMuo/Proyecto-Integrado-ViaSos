@@ -47,7 +47,22 @@ a {
 .site-header nav a:hover {
   text-decoration: underline;
 }
-
+.site-header nav .nav-outline,
+.site-header nav .nav-solid {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border: 1px solid #d71920;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.site-header nav .nav-outline {
+  color: #a80f18;
+}
+.site-header nav .nav-solid {
+  background: #d71920;
+  color: white;
+}
 /* CONTENIDO Y TARJETAS: centra el contenido y separa los módulos. */
 .container { width: min(100% - 32px, 1000px); margin: 28px auto; min-height: 70vh; }
 .card { background: white; border: 1px solid #ddd; border-radius: 5px; padding: 18px; margin: 18px 0; }
