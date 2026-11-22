@@ -101,6 +101,33 @@ a {
     grid-template-columns: 1fr;
   }
 }
+.landing-steps {
+  margin-top: 32px;
+}
+.landing-steps-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  padding: 0;
+}
+.landing-steps-list li {
+  list-style-position: inside;
+  padding: 16px;
+  background: white;
+  border: 1px solid #e4e5e9;
+  border-radius: 12px;
+}
+.landing-steps-list h3 {
+  margin: 8px 0 4px;
+}
+.landing-steps-list p {
+  margin: 0;
+}
+@media (max-width: 760px) {
+  .landing-steps-list {
+    grid-template-columns: 1fr;
+  }
+}
 /* FORMULARIOS: controles apilados, etiquetas claras y botones uniformes. */
 form { margin: 12px 0; }
 label { display: block; margin: 10px 0; font-weight: 600; }
