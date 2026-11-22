@@ -26,7 +26,16 @@
 
     <!-- INICIO: presentación del servicio y accesos de registro e inicio de sesión. -->
     {% if section == 'home' %}
-        <h1>ViaSOS</h1><p>Ficha de emergencia mediante código QR.</p><a class="button" href="/registro/">Crear cuenta</a> <a href="/ingresar/">Iniciar sesión</a>
+        <section class="landing-hero" aria-labelledby="landing-title">
+            <div class="hero-copy">
+                <h1 id="landing-title">Información vital cuando más se necesita</h1>
+                <p>Crea tu ficha de emergencia y comparte la información que autorices mediante un código QR.</p>
+                <div class="hero-actions">
+                    <a class="button" href="/registro/">Crear mi cuenta</a>
+                    <a href="/ingresar/">Iniciar sesión</a>
+                </div>
+            </div>
+        </section>
 
     <!-- REGISTRO: formulario para crear usuario y perfil asociado. -->
     {% elif section == 'register' %}

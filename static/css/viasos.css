@@ -66,6 +66,26 @@ a {
 /* CONTENIDO Y TARJETAS: centra el contenido y separa los módulos. */
 .container { width: min(100% - 32px, 1000px); margin: 28px auto; min-height: 70vh; }
 .card { background: white; border: 1px solid #ddd; border-radius: 5px; padding: 18px; margin: 18px 0; }
+.landing-hero {
+  padding: clamp(24px, 5vw, 48px);
+  background: white;
+  border-radius: 16px;
+}
+.hero-copy {
+  max-width: 36rem;
+}
+.hero-copy h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.15;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
 
 /* FORMULARIOS: controles apilados, etiquetas claras y botones uniformes. */
 form { margin: 12px 0; }
