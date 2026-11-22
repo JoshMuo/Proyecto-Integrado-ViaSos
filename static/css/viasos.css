@@ -19,13 +19,34 @@ body {
 a {
   color: var(--color-link);
 }
-
-/* CABECERA Y MENÚ: barra roja simple con enlaces blancos. */
-.site-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 5%; background: #b32632; color: white; }
-.brand { color: white; font-size: 22px; font-weight: bold; text-decoration: none; }
-.site-header nav { display: flex; flex-wrap: wrap; gap: 16px; }
-.site-header nav a { color: white; text-decoration: none; }
-.site-header nav a:hover { text-decoration: underline; }
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 5%;
+  background: white;
+  color: var(--color-text);
+  border-bottom: 1px solid #e4e5e9;
+}
+.brand {
+  color: #d71920;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.site-header nav a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+.site-header nav a:hover {
+  text-decoration: underline;
+}
 
 /* CONTENIDO Y TARJETAS: centra el contenido y separa los módulos. */
 .container { width: min(100% - 32px, 1000px); margin: 28px auto; min-height: 70vh; }
