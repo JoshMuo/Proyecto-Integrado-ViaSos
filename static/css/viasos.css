@@ -38,8 +38,11 @@ input, textarea, select { display: block; width: 100%; max-width: 560px; padding
 textarea { min-height: 80px; }
 label.check { display: flex; align-items: center; gap: 8px; font-weight: normal; }
 label.check input { width: auto; margin: 0; }
-button, .button { display: inline-block; padding: 9px 14px; border: 0; border-radius: 3px; background: #b32632; color: white; cursor: pointer; text-decoration: none; font: inherit; }
-button:hover, .button:hover { background: #861b25; }
+button,.button {display: inline-block;padding: 9px 14px;border: 0;border-radius: 8px;background: #d71920;
+color: white;cursor: pointer;text-decoration: none;font: inherit;}
+button:hover,.button:hover {
+background: #a80f18;
+}
 button.danger { background: #555; }
 
 /* FILAS Y MENSAJES: separa elementos repetidos y muestra avisos del sistema. */
