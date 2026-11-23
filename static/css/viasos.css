@@ -147,6 +147,23 @@ a {
 .landing-benefits li + li {
   margin-top: 8px;
 }
+.landing-faq {
+  margin-top: 32px;
+}
+.landing-faq details {
+  margin-bottom: 10px;
+  padding: 14px 16px;
+  background: white;
+  border: 1px solid #e4e5e9;
+  border-radius: 10px;
+}
+.landing-faq summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.landing-faq p {
+  margin: 8px 0 0;
+}
 /* FORMULARIOS: controles apilados, etiquetas claras y botones uniformes. */
 form { margin: 12px 0; }
 label { display: block; margin: 10px 0; font-weight: 600; }
