@@ -204,7 +204,26 @@ button.danger { background: #555; }
 /* FILAS Y MENSAJES: separa elementos repetidos y muestra avisos del sistema. */
 .row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; }
 .row form { margin: 0; }
-.messages { padding: 8px 14px; margin-bottom: 16px; background: #fff4d6; border: 1px solid #e7d28c; }
+.messages {
+  margin-bottom: 16px;
+}
+.messages .message {
+  margin: 0 0 8px;
+  padding: 8px 14px;
+  background: #fff4d6;
+  border: 1px solid #e7d28c;
+  border-radius: 8px;
+}
+.messages .message.error {
+  color: #842029;
+  background: #fde8ea;
+  border-color: #eebdc1;
+}
+.messages .message.success {
+  color: #155724;
+  background: #e5f5e9;
+  border-color: #b8dfc1;
+}
 .qr-image { display: block; width: 260px; max-width: 100%; height: auto; }
 .site-footer {
   display: flex;

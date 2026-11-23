@@ -27,7 +27,13 @@
 </header>
 <main class="container">
     <!-- MENSAJES: muestra confirmaciones y errores enviados por las vistas Django. -->
-    {% if messages %}<section class="messages">{% for message in messages %}<p>{{ message }}</p>{% endfor %}</section>{% endif %}
+        {% if messages %}
+        <section class="messages" aria-label="Avisos">
+            {% for message in messages %}
+                <p class="message {{ message.tags }}">{{ message }}</p>
+            {% endfor %}
+        </section>
+    {% endif %}
 
     <!-- INICIO: presentación del servicio y accesos de registro e inicio de sesión. -->
     {% if section == 'home' %}
