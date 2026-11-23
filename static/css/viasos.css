@@ -29,6 +29,18 @@ a {
   color: var(--color-text);
   border-bottom: 1px solid #e4e5e9;
 }
+@media (min-width: 761px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  #como-funciona,
+  #beneficios,
+  #preguntas {
+    scroll-margin-top: 8rem;
+  }
+}
 .brand {
   color: #d71920;
   font-size: 22px;
