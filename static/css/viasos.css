@@ -128,6 +128,25 @@ a {
     grid-template-columns: 1fr;
   }
 }
+.landing-benefits {
+  margin-top: 32px;
+  padding: clamp(20px, 4vw, 36px);
+  background: #fff0f1;
+  border-radius: 16px;
+}
+
+.landing-benefits h2 {
+  margin: 0 0 12px;
+}
+
+.landing-benefits ul {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.landing-benefits li + li {
+  margin-top: 8px;
+}
 /* FORMULARIOS: controles apilados, etiquetas claras y botones uniformes. */
 form { margin: 12px 0; }
 label { display: block; margin: 10px 0; font-weight: 600; }
