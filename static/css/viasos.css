@@ -59,6 +59,27 @@ a {
 .site-header nav a:hover {
   text-decoration: underline;
 }
+.site-header nav .nav-section-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 11px;
+  border: 1px solid #f0cdd0;
+  border-radius: 999px;
+  background: #fff5f5;
+  color: var(--color-link);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.site-header nav .nav-section-link:hover,
+.site-header nav .nav-section-link:focus-visible {
+  background: #fde3e6;
+  border-color: var(--color-link);
+  text-decoration: none;
+}
+.site-header nav .nav-section-link:focus-visible {
+  outline: 2px solid var(--color-link);
+  outline-offset: 3px;
+}
 .site-header nav .nav-outline,
 .site-header nav .nav-solid {
   display: inline-flex;
