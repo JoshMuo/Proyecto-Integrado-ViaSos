@@ -4,7 +4,8 @@
 <head>
     <!-- DOCUMENTO: idioma, codificación, vista adaptable y hoja CSS común. -->
     <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ViaSOS</title><link rel="stylesheet" href="{% static 'css/viasos.css' %}">
+    <title>{% if section == 'home' %}ViaSOS | Ficha de auxilio digital{% elif section == 'register' %}Registro | ViaSOS{% elif section == 'login' %}Iniciar sesión | ViaSOS{% else %}ViaSOS{% endif %}</title>
+    <link rel="stylesheet" href="{% static 'css/viasos.css' %}">
 </head>
 <body>
 <header class="site-header">
