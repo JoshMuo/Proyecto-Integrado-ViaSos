@@ -72,6 +72,7 @@ a {
   color: var(--color-link);
   font-size: 0.9rem;
   font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 .site-header nav .nav-section-link:hover,
 .site-header nav .nav-section-link:focus-visible {
@@ -91,13 +92,23 @@ a {
   border: 1px solid #d71920;
   border-radius: 8px;
   font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .site-header nav .nav-outline {
   color: #a80f18;
 }
+.site-header nav .nav-outline:hover {
+  background: #fff5f5;
+  text-decoration: none;
+}
 .site-header nav .nav-solid {
   background: #d71920;
   color: white;
+}
+.site-header nav .nav-solid:hover {
+  background: #a80f18;
+  border-color: #a80f18;
+  text-decoration: none;
 }
 /* CONTENIDO Y TARJETAS: centra el contenido y separa los módulos. */
 .container { width: min(100% - 32px, 1000px); margin: 28px auto; min-height: 70vh; }
@@ -219,11 +230,12 @@ textarea { min-height: 80px; }
 label.check { display: flex; align-items: center; gap: 8px; font-weight: normal; }
 label.check input { width: auto; margin: 0; }
 button,.button {display: inline-block;padding: 9px 14px;border: 0;border-radius: 8px;background: #d71920;
-color: white;cursor: pointer;text-decoration: none;font: inherit;}
+color: white;cursor: pointer;text-decoration: none;font: inherit;transition: background-color 0.2s ease;}
 button:hover,.button:hover {
 background: #a80f18;
 }
 button.danger { background: #555; }
+button.danger:hover { background: #333; }
 
 /* FILAS Y MENSAJES: separa elementos repetidos y muestra avisos del sistema. */
 .row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; }
