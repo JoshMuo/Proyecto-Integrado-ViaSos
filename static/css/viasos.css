@@ -6,7 +6,10 @@
   --color-background: #f8f9fb;
   --color-link: #a80f18;
 }
-* {
+html {
+  scroll-behavior: smooth;
+}
+- {
   box-sizing: border-box;
 }
 body {
