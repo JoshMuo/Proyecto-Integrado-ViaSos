@@ -6,7 +6,10 @@
   --color-background: #f8f9fb;
   --color-link: #a80f18;
 }
-* {
+html {
+  scroll-behavior: smooth;
+}
+- {
   box-sizing: border-box;
 }
 body {
@@ -69,6 +72,7 @@ a {
   color: var(--color-link);
   font-size: 0.9rem;
   font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 .site-header nav .nav-section-link:hover,
 .site-header nav .nav-section-link:focus-visible {
@@ -88,17 +92,27 @@ a {
   border: 1px solid #d71920;
   border-radius: 8px;
   font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .site-header nav .nav-outline {
   color: #a80f18;
+}
+.site-header nav .nav-outline:hover {
+  background: #fff5f5;
+  text-decoration: none;
 }
 .site-header nav .nav-solid {
   background: #d71920;
   color: white;
 }
+.site-header nav .nav-solid:hover {
+  background: #a80f18;
+  border-color: #a80f18;
+  text-decoration: none;
+}
 /* CONTENIDO Y TARJETAS: centra el contenido y separa los módulos. */
 .container { width: min(100% - 32px, 1000px); margin: 28px auto; min-height: 70vh; }
-.card { background: white; border: 1px solid #ddd; border-radius: 5px; padding: 18px; margin: 18px 0; }
+.card { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 18px; margin: 18px 0; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); }
 .landing-hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -107,6 +121,7 @@ a {
   padding: clamp(24px, 5vw, 48px);
   background: white;
   border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 }
 .hero-copy {
   max-width: 36rem;
@@ -140,15 +155,16 @@ a {
 .landing-steps-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: 18px;
   padding: 0;
 }
 .landing-steps-list li {
   list-style-position: inside;
-  padding: 16px;
+  padding: 18px;
   background: white;
   border: 1px solid #e4e5e9;
   border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 .landing-steps-list h3 {
   margin: 8px 0 4px;
@@ -182,6 +198,7 @@ a {
 }
 .landing-faq {
   margin-top: 32px;
+  margin-bottom: 40px;
 }
 .landing-faq details {
   margin-bottom: 10px;
@@ -189,6 +206,10 @@ a {
   background: white;
   border: 1px solid #e4e5e9;
   border-radius: 10px;
+  transition: border-color 0.2s ease;
+}
+.landing-faq details:hover {
+  border-color: #f0cdd0;
 }
 .landing-faq summary {
   cursor: pointer;
@@ -204,6 +225,7 @@ a {
   background: white;
   border: 1px solid #e4e5e9;
   border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
 }
 .public-auth-card h1 {
   margin: 0 0 16px;
@@ -212,15 +234,21 @@ a {
 form { margin: 12px 0; }
 label { display: block; margin: 10px 0; font-weight: 600; }
 input, textarea, select { display: block; width: 100%; max-width: 560px; padding: 9px; margin-top: 4px; border: 1px solid #aaa; border-radius: 3px; font: inherit; }
+input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid var(--color-link); outline-offset: 2px; border-color: var(--color-link); }
 textarea { min-height: 80px; }
 label.check { display: flex; align-items: center; gap: 8px; font-weight: normal; }
 label.check input { width: auto; margin: 0; }
 button,.button {display: inline-block;padding: 9px 14px;border: 0;border-radius: 8px;background: #d71920;
-color: white;cursor: pointer;text-decoration: none;font: inherit;}
+color: white;cursor: pointer;text-decoration: none;font: inherit;transition: background-color 0.2s ease;}
 button:hover,.button:hover {
 background: #a80f18;
 }
+button:focus-visible,.button:focus-visible {
+outline: 2px solid var(--color-link);
+outline-offset: 3px;
+}
 button.danger { background: #555; }
+button.danger:hover { background: #333; }
 
 /* FILAS Y MENSAJES: separa elementos repetidos y muestra avisos del sistema. */
 .row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; }
@@ -252,7 +280,7 @@ button.danger { background: #555; }
   justify-content: center;
   align-items: center;
   gap: 8px 16px;
-  padding: 20px 16px;
+  padding: 24px 16px;
   text-align: center;
   background: #fff5f5;
   border-top: 1px solid #e4e5e9;
@@ -260,9 +288,14 @@ button.danger { background: #555; }
 .footer-brand {
   color: var(--color-link);
   font-weight: 700;
+  text-decoration: none;
+}
+.footer-brand:hover {
+  text-decoration: underline;
 }
 .site-footer p {
   margin: 0;
+  color: #4a4a4a;
 }
 
 /* ADAPTACIÓN MÓVIL: apila el menú cuando la pantalla es estrecha. */

@@ -59,3 +59,36 @@ ViaSOS prioriza la protección de datos:
 - **Códigos QR:** Los usuarios pueden suspender o desvincular sus etiquetas QR en cualquier momento.
 
 
+git clone https://github.com/JoshMuo/Proyecto-Integrado-Viasos.git
+python -m venv .venv
+.venv\Scripts\activate
+python manage.py runserver
+
+## Estructura del proyecto
+
+```text
+Proyecto-Integrado-Viasos/
+├── manage.py              # Script de administración de Django
+├── requirements.txt       # Dependencias del proyecto
+├── .env.example           # Plantilla de variables de entorno
+├── static/                # Archivos estáticos (CSS, JS, imágenes y SVG)
+└── templates/             # Plantillas HTML de la aplicación
+
+## Tecnologías utilizadas
+
+- **Backend:** Python 3.12 y Django
+- **Base de datos:** MongoDB Atlas
+- **Frontend:** HTML5, CSS3 y JavaScript
+- **Generación de QR:** Librería `qrcode` (Python)
+- **Despliegue:** cPanel con Phusion Passenger
+
+## Seguridad y privacidad
+
+- **Control de visibilidad:** Cada usuario decide qué campos médicos y de contacto se muestran al escanear el código QR.
+- **Sin datos sensibles expuestos:** Las credenciales de base de datos y claves secretas se gestionan mediante variables de entorno (`.env`).
+- **Acceso de solo lectura:** Quien escanea el QR accede únicamente a una vista pública autorizada, sin permisos de edición.
+
+## Entorno en producción
+
+- **URL oficial:** https://viasos.proyectosjm.cl/
+- **Estado:** Desplegado y operativo.

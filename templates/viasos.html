@@ -3,15 +3,21 @@
 <html lang="es">
 <head>
     <!-- DOCUMENTO: idioma, codificación, vista adaptable y hoja CSS común. -->
-    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ViaSOS: Tu ficha de auxilio digital con código QR personalizado para compartir información médica vital y contactos de emergencia.">
+    <meta name="keywords" content="ViaSOS, ficha de emergencia, código QR médico, auxilio digital, contactos de emergencia, seguridad">
+    <meta name="author" content="ViaSOS">
     <title>{% if section == 'home' %}ViaSOS | Ficha de auxilio digital{% elif section == 'register' %}Registro | ViaSOS{% elif section == 'login' %}Iniciar sesión | ViaSOS{% else %}ViaSOS{% endif %}</title>
+    <link rel="icon" type="image/svg+xml" href="{% static 'css/img/portada.svg' %}">
     <link rel="stylesheet" href="{% static 'css/viasos.css' %}">
 </head>
 <body>
 <header class="site-header">
     <!-- CABECERA: marca y enlaces de navegación comunes a todas las secciones. -->
-    <a class="brand" href="/">ViaSOS</a>
+    <a class="brand" href="/" aria-label="Inicio de ViaSOS">ViaSOS</a>
     <button class="mobile-menu-toggle" type="button"
+        aria-label="Abrir menú de navegación"
         aria-expanded="false" aria-controls="site-navigation" hidden>Menú
     </button>
         <nav id="site-navigation" aria-label="Navegación principal">
@@ -200,7 +206,7 @@
     {% endif %}
 </main>
 <footer class="site-footer">
-    <a class="footer-brand" href="/">ViaSOS</a>
+    <a class="footer-brand" href="/" aria-label="Volver al inicio de ViaSOS">ViaSOS</a>
     <p>Tu ficha de auxilio digital</p>
 </footer>
 </body></html>
