@@ -226,6 +226,7 @@ a {
 form { margin: 12px 0; }
 label { display: block; margin: 10px 0; font-weight: 600; }
 input, textarea, select { display: block; width: 100%; max-width: 560px; padding: 9px; margin-top: 4px; border: 1px solid #aaa; border-radius: 3px; font: inherit; }
+input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid var(--color-link); outline-offset: 2px; border-color: var(--color-link); }
 textarea { min-height: 80px; }
 label.check { display: flex; align-items: center; gap: 8px; font-weight: normal; }
 label.check input { width: auto; margin: 0; }
@@ -233,6 +234,10 @@ button,.button {display: inline-block;padding: 9px 14px;border: 0;border-radius:
 color: white;cursor: pointer;text-decoration: none;font: inherit;transition: background-color 0.2s ease;}
 button:hover,.button:hover {
 background: #a80f18;
+}
+button:focus-visible,.button:focus-visible {
+outline: 2px solid var(--color-link);
+outline-offset: 3px;
 }
 button.danger { background: #555; }
 button.danger:hover { background: #333; }
