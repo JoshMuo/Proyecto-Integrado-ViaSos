@@ -198,6 +198,7 @@ a {
 }
 .landing-faq {
   margin-top: 32px;
+  margin-bottom: 40px;
 }
 .landing-faq details {
   margin-bottom: 10px;
@@ -205,6 +206,10 @@ a {
   background: white;
   border: 1px solid #e4e5e9;
   border-radius: 10px;
+  transition: border-color 0.2s ease;
+}
+.landing-faq details:hover {
+  border-color: #f0cdd0;
 }
 .landing-faq summary {
   cursor: pointer;
@@ -275,7 +280,7 @@ button.danger:hover { background: #333; }
   justify-content: center;
   align-items: center;
   gap: 8px 16px;
-  padding: 20px 16px;
+  padding: 24px 16px;
   text-align: center;
   background: #fff5f5;
   border-top: 1px solid #e4e5e9;
@@ -283,9 +288,14 @@ button.danger:hover { background: #333; }
 .footer-brand {
   color: var(--color-link);
   font-weight: 700;
+  text-decoration: none;
+}
+.footer-brand:hover {
+  text-decoration: underline;
 }
 .site-footer p {
   margin: 0;
+  color: #4a4a4a;
 }
 
 /* ADAPTACIÓN MÓVIL: apila el menú cuando la pantalla es estrecha. */
