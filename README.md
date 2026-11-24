@@ -59,3 +59,7 @@ ViaSOS prioriza la protección de datos:
 - **Códigos QR:** Los usuarios pueden suspender o desvincular sus etiquetas QR en cualquier momento.
 
 
+git clone https://github.com/JoshMuo/Proyecto-Integrado-Viasos.git
+python -m venv .venv
+.venv\Scripts\activate
+python manage.py runserver
