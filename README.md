@@ -87,3 +87,8 @@ Proyecto-Integrado-Viasos/
 - **Control de visibilidad:** Cada usuario decide qué campos médicos y de contacto se muestran al escanear el código QR.
 - **Sin datos sensibles expuestos:** Las credenciales de base de datos y claves secretas se gestionan mediante variables de entorno (`.env`).
 - **Acceso de solo lectura:** Quien escanea el QR accede únicamente a una vista pública autorizada, sin permisos de edición.
+
+## Entorno en producción
+
+- **URL oficial:** https://viasos.proyectosjm.cl/
+- **Estado:** Desplegado y operativo.
