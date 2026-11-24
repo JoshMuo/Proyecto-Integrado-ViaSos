@@ -73,3 +73,11 @@ Proyecto-Integrado-Viasos/
 ├── .env.example           # Plantilla de variables de entorno
 ├── static/                # Archivos estáticos (CSS, JS, imágenes y SVG)
 └── templates/             # Plantillas HTML de la aplicación
+
+## Tecnologías utilizadas
+
+- **Backend:** Python 3.12 y Django
+- **Base de datos:** MongoDB Atlas
+- **Frontend:** HTML5, CSS3 y JavaScript
+- **Generación de QR:** Librería `qrcode` (Python)
+- **Despliegue:** cPanel con Phusion Passenger
