@@ -63,3 +63,13 @@ git clone https://github.com/JoshMuo/Proyecto-Integrado-Viasos.git
 python -m venv .venv
 .venv\Scripts\activate
 python manage.py runserver
+
+## Estructura del proyecto
+
+```text
+Proyecto-Integrado-Viasos/
+├── manage.py              # Script de administración de Django
+├── requirements.txt       # Dependencias del proyecto
+├── .env.example           # Plantilla de variables de entorno
+├── static/                # Archivos estáticos (CSS, JS, imágenes y SVG)
+└── templates/             # Plantillas HTML de la aplicación
