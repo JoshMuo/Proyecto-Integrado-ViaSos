@@ -4,33 +4,136 @@
 <head>
     <!-- DOCUMENTO: idioma, codificación, vista adaptable y hoja CSS común. -->
     <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ViaSOS</title><link rel="stylesheet" href="{% static 'css/viasos.css' %}">
+    <title>{% if section == 'home' %}ViaSOS | Ficha de auxilio digital{% elif section == 'register' %}Registro | ViaSOS{% elif section == 'login' %}Iniciar sesión | ViaSOS{% else %}ViaSOS{% endif %}</title>
+    <link rel="stylesheet" href="{% static 'css/viasos.css' %}">
 </head>
 <body>
 <header class="site-header">
     <!-- CABECERA: marca y enlaces de navegación comunes a todas las secciones. -->
     <a class="brand" href="/">ViaSOS</a>
-    <nav><a href="/">Inicio</a>
+    <button class="mobile-menu-toggle" type="button"
+        aria-expanded="false" aria-controls="site-navigation" hidden>Menú
+    </button>
+        <nav id="site-navigation" aria-label="Navegación principal">
+        <a class="nav-section-link" href="/">Inicio</a>
+        <a class="nav-section-link" href="/#como-funciona">Cómo funciona</a>
+        <a class="nav-section-link" href="/#beneficios">Beneficios</a>
+        <a class="nav-section-link" href="/#preguntas">Preguntas frecuentes</a>
     {% if request.user.is_authenticated %}<a href="/panel/">Mi panel</a>{% if request.user.is_superuser %}<a href="/admin/">Admin Django</a>{% endif %}<a href="/salir/">Cerrar sesión</a>
-    {% else %}<a href="/registro/">Registrarse</a><a href="/ingresar/">Iniciar sesión</a>{% endif %}</nav>
+        {% else %}<a class="nav-outline" href="/registro/">Registrarse</a><a class="nav-solid" href="/ingresar/">Iniciar sesión</a>
+    {% endif %}
+    </nav>
+    <script src="{% static 'css/js/navigation.js' %}" defer></script>
 </header>
 <main class="container">
     <!-- MENSAJES: muestra confirmaciones y errores enviados por las vistas Django. -->
-    {% if messages %}<section class="messages">{% for message in messages %}<p>{{ message }}</p>{% endfor %}</section>{% endif %}
+        {% if messages %}
+        <section class="messages" aria-label="Avisos">
+            {% for message in messages %}
+                <p class="message {{ message.tags }}">{{ message }}</p>
+            {% endfor %}
+        </section>
+    {% endif %}
 
     <!-- INICIO: presentación del servicio y accesos de registro e inicio de sesión. -->
     {% if section == 'home' %}
-        <h1>ViaSOS</h1><p>Ficha de emergencia mediante código QR.</p><a class="button" href="/registro/">Crear cuenta</a> <a href="/ingresar/">Iniciar sesión</a>
+        <section class="landing-hero" aria-labelledby="landing-title">
+            <div class="hero-copy">
+                <h1 id="landing-title">Información vital cuando más se necesita</h1>
+                <p>Crea tu ficha de emergencia y comparte la información que autorices mediante un código QR.</p>
+                <div class="hero-actions">
+                    <a class="button" href="/registro/">Crear mi cuenta</a>
+                    <a href="/ingresar/">Iniciar sesión</a>
+                    <a href="#como-funciona">Conoce el QR</a>
+                </div>
+            </div>
+                <div class="hero-art">
+            <img src="{% static 'static/css/img/portada.svg' %}"
+                 alt="Ilustración de un teléfono con una ficha de emergencia ViaSOS">
+            </div>
+        </section>
+        <section id="como-funciona" class="landing-steps">
+            <h2>¿Cómo funciona ViaSOS?</h2>
+
+            <ol class="landing-steps-list">
+                <li>
+                    <h3>Crea tu perfil</h3>
+                    <p>Completa tu información y elige qué datos pueden aparecer en la ficha.</p>
+                </li>
+                <li>
+                    <h3>Genera tu QR</h3>
+                    <p>Crea y descarga el código desde tu panel.</p>
+                </li>
+                <li>
+                    <h3>Comparte tu ficha</h3>
+                    <p>Quien escanee el código podrá abrir la ficha en el navegador.</p>
+                </li>
+            </ol>
+        </section>
+        <section id="beneficios" class="landing-benefits">
+            <h2>Beneficios de ViaSOS</h2>
+            <ul>
+                <li>Abre la ficha desde el navegador del teléfono.</li>
+                <li>Elige qué datos de tu perfil quieres compartir.</li>
+                <li>Descarga tu código QR para llevarlo contigo.</li>
+            </ul>
+        </section>
+        <section id="preguntas" class="landing-faq">
+            <h2>Preguntas frecuentes</h2>
+            <details>
+                <summary>¿Qué es ViaSOS?</summary>
+                <p>Una ficha de emergencia digital que se puede consultar mediante un código QR.</p>
+            </details>
+            <details>
+                <summary>¿Necesito instalar una aplicación?</summary>
+                <p>La ficha se abre en el navegador del dispositivo que escanea el código.</p>
+            </details>
+            <details>
+                <summary>¿Qué información pueden ver otras personas?</summary>
+                <p>Pueden ver tu nombre, tu apellido y los datos adicionales que autorices publicar.</p>
+            </details>
+        </section>
 
     <!-- REGISTRO: formulario para crear usuario y perfil asociado. -->
     {% elif section == 'register' %}
-        <h1>Registro</h1><form method="post">{% csrf_token %}
-        <label>Nombre<input name="name" required></label><label>Apellido<input name="surname" required></label><label>Correo<input name="email" type="email" required></label>
-        <label>Contraseña<input name="password" type="password" required></label><label>Confirmar contraseña<input name="confirm" type="password" required></label><button>Crear cuenta</button></form>
+        <div class="public-auth-card">
+            <h1>Registro</h1>
+            <form method="post">
+                {% csrf_token %}
+                <label>Nombre
+                    <input name="name" autocomplete="given-name" required>
+                </label>
+                <label>Apellido
+                    <input name="surname" autocomplete="family-name" required>
+                </label>
+                <label>Correo
+                    <input name="email" type="email" autocomplete="username" required>
+                </label>
+                <label>Contraseña
+                    <input name="password" type="password" autocomplete="new-password" minlength="10" required>
+                </label>
+                <label>Confirmar contraseña
+                    <input name="confirm" type="password" autocomplete="new-password" minlength="10" required>
+                </label>
+                <button>Crear cuenta</button>
+            </form>
+        </div>
 
     <!-- LOGIN: autentica las credenciales usando el sistema de usuarios de Django. -->
     {% elif section == 'login' %}
-        <h1>Iniciar sesión</h1><form method="post">{% csrf_token %}<label>Correo<input name="email" type="email" required></label><label>Contraseña<input name="password" type="password" required></label><button>Ingresar</button></form>
+        <div class="public-auth-card">
+            <h1>Iniciar sesión</h1>
+            <form method="post">
+                {% csrf_token %}
+                <label>Correo
+                    <input name="email" type="email" autocomplete="username" required>
+                </label>
+                <label>Contraseña
+                    <input name="password" type="password" autocomplete="current-password" required>
+                </label>
+                <button>Ingresar</button>
+            </form>
+        </div>
 
     <!-- PANEL USUARIO: reúne perfil, privacidad, contactos, códigos QR y soporte. -->
     {% elif section == 'dashboard' %}
@@ -96,5 +199,8 @@
         <h1>{{ qr.name }}</h1><section class="card"><img class="qr-image" src="/qr/{{ qr.token }}/imagen/" alt="Código QR ViaSOS"><p><a href="/qr/{{ qr.token }}/imagen/">Descargar código QR</a></p></section>
     {% endif %}
 </main>
-<footer>ViaSOS — versión local simplificada</footer>
+<footer class="site-footer">
+    <a class="footer-brand" href="/">ViaSOS</a>
+    <p>Tu ficha de auxilio digital</p>
+</footer>
 </body></html>

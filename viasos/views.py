@@ -30,8 +30,12 @@ def home(request): return page(request, 'home')
 def register(request):
  if request.method=='POST':
   n=request.POST.get('name','').strip(); s=request.POST.get('surname','').strip(); e=request.POST.get('email','').strip().lower(); p=request.POST.get('password','')
-  if not all([n,s,e,p]) or p!=request.POST.get('confirm'): messages.error(request,'Completa los campos y verifica la contraseña.')
-  elif User.objects.filter(username=e).exists(): messages.error(request,'Ese correo ya está registrado.')
+  if not all([n, s, e, p]) or p != request.POST.get('confirm'):
+   messages.error(request, 'Completa los campos y verifica la contraseña.')
+  elif len(p) < 10:
+   messages.error(request, 'La contraseña debe tener al menos 10 caracteres.')
+  elif User.objects.filter(username=e).exists():
+   messages.error(request, 'Ese correo ya está registrado.')
   else:
    u=User.objects.create_user(username=e,email=e,password=p,first_name=n,last_name=s); Perfil.objects.create(user=u); login(request,u); return redirect('dashboard')
  return page(request, 'register')
