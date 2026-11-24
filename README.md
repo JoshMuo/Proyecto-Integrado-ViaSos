@@ -81,3 +81,9 @@ Proyecto-Integrado-Viasos/
 - **Frontend:** HTML5, CSS3 y JavaScript
 - **Generación de QR:** Librería `qrcode` (Python)
 - **Despliegue:** cPanel con Phusion Passenger
+
+## Seguridad y privacidad
+
+- **Control de visibilidad:** Cada usuario decide qué campos médicos y de contacto se muestran al escanear el código QR.
+- **Sin datos sensibles expuestos:** Las credenciales de base de datos y claves secretas se gestionan mediante variables de entorno (`.env`).
+- **Acceso de solo lectura:** Quien escanea el QR accede únicamente a una vista pública autorizada, sin permisos de edición.
